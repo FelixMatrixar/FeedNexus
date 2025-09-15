@@ -1,86 +1,134 @@
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
-
-# FeedNexus
-
-**AI generates the first draft. You perfect the final story.**
+# 🚀 FeedNexus
+<div align="center">
+<img width="1200" height="475" alt="Banner" src="[https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/spongebob%20smile%20at%20squidward.gif](https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/FeedNexus%20Banner.png)" />
+</div>
+> ### **AI generates the first draft. You perfect the final story.**
 
 ---
 
 ## What I Built
 
-FeedNexus is an AI-powered co-pilot designed for visual journalists, social media managers, and content creators. It addresses a significant bottleneck in the digital newsroom: the slow, manual process of transforming developing news stories into engaging, visually consistent social media carousels for platforms like Instagram.
+### The Problem
 
-The application serves as an intelligent assistant that automates the most time-consuming parts of the creative workflow:
+<div align="center">
+<img width="1200" height="475" alt="MemeProblem" src="https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/spongebob%20smile%20at%20squidward.gif" />
+</div>
 
-1.  **Story Discovery & Synthesis:** A user provides a broad topic of interest (e.g., "AI and Technology"). FeedNexus uses the Gemini API with Google Search grounding to find the single most significant, credible news story on that topic from the last 48 hours. It synthesizes information from multiple sources into a concise summary, providing citations for journalistic integrity.
+In today's fast-paced digital landscape, news breaks instantly, but creating high-quality, visually-consistent social media content is slow and labor-intensive. Content creators and newsrooms face a constant struggle:
 
-2.  **Narrative Structuring:** Based on the story's content, the AI drafts a compelling 10-slide narrative using a library of proven, effective slide styles (e.g., "The Spotlight" for a hook, "The Data Flash" for a key statistic, "The Closer" for a call-to-action).
+* **The Speed Gap:** There is a significant delay between a story breaking and the publication of an engaging, well-designed visual asset. By the time a carousel is manually created, the conversation may have already moved on.
+* **Creative Burnout:** Journalists and social media managers spend hours on repetitive, manual tasks—summarizing articles, finding visuals, formatting text, and ensuring brand compliance—instead of focusing on high-level storytelling and community engagement.
+* **Brand Inconsistency:** Across a team, maintaining a cohesive visual identity for every post is a major challenge, often leading to a fragmented and unprofessional social media presence.
+* **The Quality vs. Quantity Dilemma:** Teams are often forced to choose between producing content *quickly* or producing content that is *high-quality*. Doing both consistently is nearly impossible without a better workflow.
 
-3.  **Visual Generation & Branding:** For each slide, FeedNexus generates a unique, abstract visual that metaphorically represents the content. This is guided by a strict set of art direction principles and a user-selected color palette, ensuring every asset is brand-aligned and aesthetically cohesive.
+### The Solution
 
-4.  **Interactive Editing & Finalizing:** The AI-generated draft is presented in a fully interactive, in-browser editor. Journalists can refine text, reposition elements, regenerate visuals, or even drag-and-drop real-world images onto the slides. Once satisfied, they can export the entire package—including all slide images and a written summary—as a single zip file, ready for publishing.
+**FeedNexus** is an AI-powered co-pilot designed to eliminate this bottleneck. It serves as an intelligent assistant that automates the most time-consuming parts of the creative workflow, allowing creators to bridge the gap between raw information and a polished, ready-to-publish visual story in minutes, not hours.
 
-FeedNexus bridges the gap between raw information and a polished, ready-to-publish visual story, drastically reducing production time while enhancing creative quality.
+Here's how it works:
 
-## Demo
+* **📰 Story Discovery & Synthesis:** Provide a topic (e.g., "AI and Technology"), and FeedNexus finds the most significant, credible news story from the last 48 hours. It synthesizes information into a concise, cited summary.
+
+* **📜 Narrative Structuring:** The AI drafts a compelling 10-slide narrative using a library of proven slide archetypes, like "The Spotlight" for a powerful hook or "The Data Flash" for a key statistic.
+
+* **🎨 Visual Generation & Branding:** For each slide, FeedNexus generates a unique, *abstract* visual that metaphorically represents the content, guided by a dynamically suggested, context-aware color palette to ensure every asset is brand-aligned.
+
+* **✍️ Interactive Editing & Finalizing:** The AI's draft is presented in a fully interactive editor. Refine text, reposition elements, regenerate visuals, or drag-and-drop real-world images. When ready, export the entire package as a zip file, ready for publishing.
+
+---
+
+## 🎬 Demo
 
 Check out a live walkthrough of FeedNexus in action:
 
-[Watch the Demo on YouTube](https://www.youtube.com/watch?v=dQw4w9WgXcQ) <!-- Placeholder YouTube Link -->
+<br>
 
-**Screenshots:**
+[**▶️ Watch the Demo on YouTube**](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
-*Coming soon: Screenshots of the topic input, loader, and interactive editor will be placed here.*
+<br>
 
-## How I Used the Gemini API
+---
 
-The Gemini API is the engine behind FeedNexus's core functionality. I leveraged several advanced features to create a seamless and intelligent workflow, moving from broad concepts to structured, multimodal content.
+## 🛠️ How I Used the Gemini API
 
-1.  **News Aggregation & Grounding (`gemini-2.5-flash` with Google Search)**
-    *   To ensure the content is timely and credible, FeedNexus uses Gemini with the `googleSearch` tool. When a user enters a topic, the model performs a real-time web search to find the most relevant news, grounding its summary in verifiable facts and providing source links directly in the UI. This is critical for maintaining journalistic standards.
+The Gemini API is the engine behind FeedNexus's core intelligence. I leveraged several advanced features to create a seamless workflow from broad concepts to structured, multimodal content.
 
-2.  **Structured Content Generation (`gemini-2.5-flash` with JSON Mode)**
-    *   The most complex task is translating a news summary into a full carousel layout. I achieved this by defining a rigorous `responseSchema`. The AI is prompted to populate this schema, which details every aspect of the 10-slide plan: the chosen `styleName` for each slide, the `visualDescription` prompt for the image generator, and an array of `elements` (text, shapes) with precise coordinates, dimensions, and styling that adheres to the selected brand palette. This ensures the AI's output is always machine-readable and can be rendered perfectly by the application.
+**1. News Aggregation & Grounding (`gemini-2.5-flash` with Google Search)**
+To ensure content is timely and credible, FeedNexus uses Gemini with the `googleSearch` tool. The model performs real-time searches, grounding its summary in verifiable facts and providing source links—critical for maintaining journalistic standards.
 
-3.  **Metaphorical Visual Creation (`imagen-3.0-generate-002`)**
-    *   To create a unique visual identity, FeedNexus uses the `generateImages` functionality. The `visualDescription` prompts generated in the previous step are passed to the Imagen model. The art direction mandates that these visuals must be *metaphorical and abstract*, resulting in a sophisticated and consistent aesthetic that avoids generic stock imagery.
+**2. Structured Content Generation (`gemini-2.5-flash` with JSON Mode)**
+To translate a news summary into a full carousel layout, I defined a rigorous `responseSchema`. The AI is prompted to populate this schema, detailing the `styleName` for each slide, the `visualDescription` for the image generator, and an array of `elements` with precise coordinates and styling. This guarantees the AI's output is perfectly rendered by the application.
 
-4.  **Audio Briefing Generation (`gemini-2.5-flash`)**
-    *   For accessibility and deeper engagement, FeedNexus generates a concise script for a 3-4 sentence audio summary of the story. This text is then passed to the browser's native Web Speech API to be synthesized into voice, providing users with a "listenable" version of the news.
+**3. Metaphorical Visual Creation (`imagen-3.0-generate-002`)**
+To create a unique visual identity, FeedNexus uses the `generateImages` functionality. The art direction mandates that these visuals must be **metaphorical and abstract**, resulting in a sophisticated aesthetic that avoids generic stock imagery.
 
-## Multimodal Features
+**4. Audio Briefing Generation (`gemini-2.5-flash`)**
+For accessibility, FeedNexus generates a concise script for an audio summary. This text is then passed to the browser's native Web Speech API to be synthesized into voice, providing a "listenable" version of the news.
+
+---
+
+## ✨ Multimodal Features
 
 FeedNexus is fundamentally multimodal, designed to understand, process, and generate content across text, structured data, and images.
 
--   **Text-to-JSON-to-Image Pipeline:** The core workflow is a powerful demonstration of multimodal translation. The application takes unstructured text (news articles found via search), transforms it into highly structured JSON data (the carousel plan), which in turn provides the specific text and image prompts needed to generate the final visual slides. This pipeline shows a deep understanding of content and its representation in different forms.
+* **Text-to-JSON-to-Image Pipeline:** The core workflow is a powerful demonstration of multimodal translation. It takes unstructured text (news articles), transforms it into structured JSON data (the carousel plan), which in turn provides the prompts to generate the final visual slides.
 
--   **Blending Factual & Abstract Imagery:** The user experience is built around a multimodal choice. The AI provides abstract, metaphorical art that captures the *feeling* of a story. Simultaneously, the app uses an external API (SerpAPI) to find real-world photos related to the story. In the interactive editor, the user can seamlessly blend these two visual modalities—using AI art for the cover slide and then dragging a real-world photo onto a "Key Players" slide, for example. This allows the final product to be both emotionally resonant and factually grounded.
+* **Blending Factual & Abstract Imagery:** The editor allows users to seamlessly blend two visual modalities. Use the AI's abstract art for a cover slide, then drag a real-world, cited photo onto a "Key Players" slide. The final product is both emotionally resonant and factually grounded.
 
--   **Content and Layout Co-generation:** Unlike traditional tools where text and layout are separate, FeedNexus's AI model generates them simultaneously. It decides that a particular piece of information is best represented as a "Data Flash" slide and designs the layout with a huge font size accordingly. This holistic approach ensures that the design always serves the content, creating a more impactful and readable final product.
+* **Content and Layout Co-generation:** The AI doesn't just write text; it designs the layout simultaneously. It decides a piece of information is best represented as a "Data Flash" and styles it accordingly, ensuring the design always serves the content.
 
-## Techniques in Content Design
+---
 
-FeedNexus employs several sophisticated techniques to ensure the generated content is not just automated, but also effective, engaging, and journalistically sound.
+## 🎨 Techniques in Content Design
 
--   **Hook-Driven Narrative Structure:** The AI is instructed to always begin the 10-slide carousel with "The Spotlight" style. This journalistic principle ensures the story immediately grabs the viewer's attention with the most impactful headline and visual, maximizing audience retention from the very first slide.
+FeedNexus employs several sophisticated techniques to ensure the generated content is effective, engaging, and journalistically sound.
 
--   **Visual Scaffolding with a Style Library:** Instead of giving the AI complete freedom, which can lead to inconsistent results, FeedNexus provides a curated "Style Library" of 12 proven slide archetypes. The AI's task is to act as a visual editor, selecting the best style to present each part of the story's narrative arc. This scaffolding ensures every carousel follows a logical and engaging flow.
+* **Dynamic, Context-Aware Branding:** The AI analyzes the mood and context of the news story to suggest a thematically appropriate color palette—for instance, sober blues and grays for political analysis, or vibrant, energetic tones for a story on innovation. The chosen palette's hex codes are then programmatically injected into the image generation prompts, ensuring the resulting abstract visuals are perfectly and smoothly color-matched to the brand theme.
 
--   **Metaphorical Abstraction in Art Direction:** A core design principle is the avoidance of generic or literal imagery. The AI is mandated to generate `visualDescription` prompts that are abstract and metaphorical. This results in a unique, sophisticated visual brand identity that captures the *mood* and *implications* of a news story rather than just illustrating it literally.
+* **Hook-Driven Narrative Structure:** The AI is instructed to *always* begin with "The Spotlight" style to immediately grab the viewer's attention and maximize retention.
 
--   **Strict Typographic and Brand Hierarchy:** The AI operates under a strict set of brand guidelines, including a defined color palette and typographic rules (e.g., Montserrat for headlines, Open Sans for body). This ensures that every piece of generated content is instantly brand-aligned, saving creators the tedious task of manual formatting.
+* **Visual Scaffolding with a Style Library:** Instead of giving the AI complete freedom, it selects from a curated "Style Library" of 12 proven slide archetypes, ensuring every carousel follows a logical and engaging flow.
 
--   **Data-Driven Storytelling:** The AI is trained to recognize key data points, comparisons, or quotes within the source material and map them to specific slide styles like "The Data Flash," "The Versus Slide," or "The Visionary Quote." This technique transforms dry information into visually compelling and easily digestible narrative beats.
+* **Metaphorical Abstraction in Art Direction:** A core principle is the avoidance of literal imagery. This results in a unique visual brand that captures the *mood* and *implications* of a story.
 
--   **Human-in-the-Loop Refinement:** The final and most critical technique is that the AI's output is treated as a "first draft," not the final product. The interactive editor empowers the journalist to be the final arbiter of the story, allowing them to accept, reject, or refine every AI-generated element. This co-pilot model blends the speed of automation with the nuance and ethical oversight of a human editor.
+* **Strict Typographic and Brand Hierarchy:** The AI operates under defined brand guidelines (colors, fonts), saving creators the tedious task of manual formatting.
 
-## Project Contributors
+* **Data-Driven Storytelling:** The AI is trained to map key data, comparisons, or quotes to specific slide styles, transforming dry information into compelling narrative beats.
 
--   **Felix** - Project Lead
-    -   Instagram: [@felix_rngg](https://www.instagram.com/felix_rngg)
-    -   LinkedIn: [felix-mneuro](https://www.linkedin.com/in/felix-mneuro/)
--   **Christie** - Backend Developer
-    -   Instagram: [@christieteydaddy](https://www.instagram.com/christieteydaddy/)
-    -   LinkedIn: [christie-1a14b610b](https://www.linkedin.com/in/christie-1a14b610b/)
+* **Human-in-the-Loop Refinement:** The AI's output is treated as a "first draft." The interactive editor empowers the journalist to be the final arbiter of the story, blending the speed of automation with the nuance and ethical oversight of a human editor.
+
+---
+
+## 🧰 The 12 Slide Archetypes: Your Storytelling Toolkit
+
+FeedNexus uses a library of 12 distinct slide styles, allowing the AI to construct a varied and compelling narrative for any news story.
+
+* **The Spotlight:** The hero slide. A powerful, full-bleed visual and a bold headline to act as the primary hook.
+* **The Analyst:** The breakdown. Presents key takeaways or facts in a clean, digestible bulleted list.
+* **The Visionary Quote:** The human element. Highlights a powerful quote from a key person involved in the story.
+* **The Data Flash:** The big number. An ultra-minimalist slide that showcases a single, impactful statistic.
+* **The Versus Slide:** The comparison. A split-screen layout to compare two opposing ideas, entities, or outcomes.
+* **The Timeline:** The context. A sequential overview of key dates and events that led to the current news.
+* **The Key Players:** The "who." Introduces the main people or organizations involved with headshots or logos.
+* **The Map:** The geographic view. A stylized map graphic that highlights the location(s) where the news is happening.
+* **The Pros & Cons:** The balanced take. A two-column layout to explore the positive and negative implications.
+* **The Process:** The "how." A step-by-step flowchart that explains a complex process or workflow.
+* **The Question:** The engagement prompt. A slide designed to pose a direct question to the audience to spark discussion.
+* **The Closer:** The call-to-action. A branded sign-off slide that encourages users to follow, save, and share.
+
+---
+
+## 👥 Project Contributors
+
+| Name         | Role                | Instagram                                                 | LinkedIn                                                           |
+| :----------- | :------------------ | :---------------------------------------------------------- | :----------------------------------------------------------------- |
+| **Felix** | Project Lead        | [@felix\_rngg](https://www.instagram.com/felix_rngg)          | [felix-mneuro](https://www.linkedin.com/in/felix-mneuro/)          |
+| **Christie** | Backend Developer   | [@christieteydaddy](https://www.instagram.com/christieteydaddy/) | [christie-1a14b610b](https://www.linkedin.com/in/christie-1a14b610b/) |
+
+Reach out to us!
+<div align="center">
+<img width="1200" height="475" alt="LetsConnect" src="[https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6](https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/carrying%20patrick.gif)" />
+</div>
