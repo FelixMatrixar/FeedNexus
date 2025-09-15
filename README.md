@@ -1,11 +1,7 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 # 🚀 FeedNexus
 <div align="center">
-<img width="1200" height="475" alt="Banner" src="[https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/spongebob%20smile%20at%20squidward.gif](https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/FeedNexus%20Banner.png)" />
+<img width="1200" height="475" alt="Banner" src="https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/FeedNexus%20Banner.png" />
 </div>
-> ### **AI generates the first draft. You perfect the final story.**
 
 ---
 
@@ -130,5 +126,5 @@ FeedNexus uses a library of 12 distinct slide styles, allowing the AI to constru
 
 Reach out to us!
 <div align="center">
-<img width="1200" height="475" alt="LetsConnect" src="[https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6](https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/carrying%20patrick.gif)" />
+<img width="1200" height="475" alt="LetsConnect" src="https://github.com/FelixMatrixar/FeedNexus/blob/main/gifs/carrying%20patrick.gif" />
 </div>
