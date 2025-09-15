@@ -41,7 +41,7 @@ Here's how it works:
 Check out a live walkthrough of FeedNexus in action:
 
 <br>
-[APPLET](https://ai.studio/apps/drive/1i3rslcoZuLtOiCq4V5SA8lN-8X7KOwjD)
+[APPLET](https://ai.studio/apps/drive/1i3rslcoZuLtOiCq4V5SA8lN-8X7KOwjD) \n
 [DEMO](https://youtu.be/v_Ydc0wBj_w)
 
 <br>
