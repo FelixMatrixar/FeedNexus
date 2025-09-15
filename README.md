@@ -42,7 +42,7 @@ Check out a live walkthrough of FeedNexus in action:
 
 <br>
 
-[**▶️ Watch the Demo on YouTube**](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[**▶️ Watch the Demo on YouTube**](https://www.youtube.com/)
 
 <br>
 
